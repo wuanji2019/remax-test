@@ -1,0 +1,107 @@
+a
+  text-decoration: none
+  color: inherit
+
+body
+  margin: 0
+  line-height: 1
+  font-size: 12px
+
+@for $i from 1 to 20
+  .mt-#{$i*5}
+    margin-top: ($i*5) + px
+  .mr-#{$i*5}
+    margin-right: ($i*5) + px
+  .mb-#{$i*5}
+    margin-bottom: ($i*5) + px
+  .ml-#{$i*5}
+    margin-left: ($i*5) + px
+  .pt-#{$i*5}
+    padding-top: ($i*5) + px
+  .pb-#{$i*5}
+    padding-bottom: ($i*5) + px
+  .pl-#{$i*5}
+    padding-left: ($i*5) + px
+  .pr-#{$i*5}
+    padding-right: ($i*5) + px
+  .bd-rs-#{$i}
+    border-radius: $i + px
+
+// 字体大小
+// @for $i from 0 to 4
+//   .ft-#{$i}
+//     @if $i>0
+//       font-size: $i+rem
+
+//     @for $j from 1 through 9
+//       .ft-#{$i}-#{$j}
+//         font-size: $i+($j/10)+rem
+
+// 字体粗细
+@each  $w in 2,4,6,9
+  .ft-w-#{$w}
+    font-weight: $w*100
+
+// 内容
+.text-ct
+  text-align: center
+
+.text-lf
+  text-align: left
+
+.text-rt
+  text-align: right
+
+.text-md
+  vertical-align: middle
+
+.nowrap
+  white-space: nowrap
+
+.line--only
+  display: inline-block
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+
+@for $i from 2 to 4
+  .line--#{$i}
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: $i
+    overflow: hidden
+
+.text-sub
+  color: #828d9b
+  transform: scale(.85)
+
+// 阴影
+@mixin shadow($v:0,$h:0,$b:1px,$r:0,$c:rgba(0,0,0,.15))
+  box-shadow: $v $h $b $r $c
+
+.bt-shadow
+  @include shadow($h:1px,$b:2px)
+
+.bt-lg-shadow
+  @include shadow($h:0px,$b:2px)
+
+.bt-dk-shadow
+  @include shadow($h:1px,$b:2px,$c:rgba(0,0,0,.2))
+
+.rt-shadow
+  @include shadow($v:1px,$b:2px)
+
+.box-shadow
+  @include shadow($b:4px,$r:1px,$c:rgba(0,0,0,.1))
+
+.box-lg-shadow
+  @include shadow($b:6px,$c:rgba(0,0,0,.1))
+
+.box-dk-shadow
+  @include shadow($b:3px,$r:1px,$c:rgba(0,0,0,.2))
+
+.top-shadow
+  box-shadow: 0 1px 3px inset rgba(0,0,0,.15)
+
+.act-shadow:hover
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15)
